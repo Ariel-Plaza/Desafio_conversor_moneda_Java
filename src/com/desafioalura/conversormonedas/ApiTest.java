@@ -1,3 +1,5 @@
+package com.desafioalura.conversormonedas;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
