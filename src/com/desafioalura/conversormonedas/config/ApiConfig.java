@@ -4,10 +4,10 @@ public class ApiConfig {
 
     private String moneda_base;
     private String moneda_convertir;
-    private int monto;
+    private double monto;
     public static String url;
 
-    public ApiConfig(String moneda_base, String moneda_convertir, int monto){
+    public ApiConfig(String moneda_base, String moneda_convertir, double monto){
         this.moneda_base = moneda_base;
         this.moneda_convertir = moneda_convertir;
         this.monto = monto;

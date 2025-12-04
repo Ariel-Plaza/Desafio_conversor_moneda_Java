@@ -9,14 +9,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Client {
-
-    private String URL;
-
-//    public Client(String URL){
-//        this.URL = URL;
-//
-//    }
-
     public String http (ApiConfig URL) throws IOException, InterruptedException {
         //es la clase que actuq como cliente
         HttpClient client = HttpClient.
@@ -37,7 +29,7 @@ public class Client {
         return response.body();
     }
 
-    }
+}
 
 
 
