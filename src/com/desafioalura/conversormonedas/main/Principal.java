@@ -47,6 +47,10 @@ public class Principal {
                 //scanner
                 double monto = teclado.nextDouble();
                 teclado.nextLine();
+                if(monto <= 0) {
+                    System.out.println("El monto debe ser mayor a 0");
+                    continue;
+                }
 
                 //Llamado a la api segun opcion
                 //SWITCH
@@ -110,11 +114,11 @@ public class Principal {
         System.out.println(mensaje);
     }
     //Proceso completo de configuracion, llamado a la api y proceso de datos con Gson
-    private static void procesarConversion(String moneda_base, String moneda_convertir, double monto,
-                                           Client llamadoAPI, Gson gson) throws IOException, InterruptedException{
-        ApiConfig apiConfig = new ApiConfig(moneda_base,moneda_convertir,monto);
-        String json = llamadoAPI.http(apiConfig);
-        ConversorMoneda conversor2 = gson.fromJson(json, ConversorMoneda.class);
-        System.out.println(FormatoUtils.formateoConversion(conversor2, monto));
+    private static void procesarConversion(String monedaBase, String monedaConvertir, double monto,
+                                           Client clienteAPI, Gson gson) throws IOException, InterruptedException{
+        ApiConfig apiConfig = new ApiConfig(monedaBase,monedaConvertir,monto);
+        String json = clienteAPI.http(apiConfig);
+        ConversorMoneda conversor = gson.fromJson(json, ConversorMoneda.class);
+        System.out.println(FormatoUtils.formateoConversion(conversor, monto));
     }
 }

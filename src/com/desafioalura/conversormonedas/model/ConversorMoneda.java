@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName;
 //modifico nombres de data recibida desde la api
 public record ConversorMoneda(
         @SerializedName("base_code")
-        String moneda_base,
+        String monedaBase,
 
         @SerializedName("target_code")
-        String moneda_convertida,
+        String monedaConvertida,
 
         @SerializedName("conversion_rate")
         double tasaConversion,
@@ -19,6 +19,6 @@ public record ConversorMoneda(
     //mensaje de salida
     @Override
     public String toString() {
-        return "EL valor ("+ moneda_base +") corresponde al valor final de =>>> "+ resultadoConversion +" ("+moneda_convertida+")";
+        return "El valor ("+ monedaBase +") corresponde al valor final de =>>> "+ resultadoConversion +" ("+ monedaConvertida +")";
     }
 }
